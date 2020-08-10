@@ -1,0 +1,45 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="alert alert-dark" role="alert" *ngFor="let item of pruebaItems">
+                {{item.name}}
+                <div class="float-right" (click)="eliminar(item)">
+                    <i class="far fa-trash-alt"></i>
+                </div>
+                <div class="float-right mx-4" data-toggle="modal" data-target="#exampleModal" (click)="editar(item)">
+                    <i class="far fa-edit"></i>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-6">
+            <form (ngSubmit)="agregar()">
+                <input type="text" placeholder="Ingresa Item" name="name" class="form-control" [(ngModel)]="lista.name">
+                <button class="btn btn-dark mt-3" type="submit">Agregar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Editar:{{editarItems.name}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+            </div>
+            <div class="modal-body">
+                <form (ngSubmit)="agregarItemEditado()">
+                    <input type="text" placeholder="Editar Item" name="name" class="form-control" [(ngModel)]="editarItems.name">
+                    <button class="btn btn-dark mt-3" type="submit">Editar</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

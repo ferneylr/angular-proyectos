@@ -1,0 +1,91 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <ng-template #login>
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/login">
+                            <i class="fas fa-door-open"></i>
+                            <h2> Iniciar Sesion</h2>
+                        </a>
+                    </li>
+                </ul>
+            </ng-template>
+        </div>
+    </div>
+</div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor02">
+        <ul class="navbar-nav mx-auto">
+            <li class="nav-item ">
+                <a class="nav-link" [routerLink]="['/']">Inicio </a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="/login" role="button" aria-haspopup="true" aria-expanded="false">Consultoria Tributaria Virtual</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/login">¿Que es?</a>
+                    <a class="dropdown-item" href="/login">Perfil de Usuario</a>
+                    <a class="dropdown-item" href="/login">Hacer Pregunta</a>
+
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Biblioteca Virtual</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Doctrina DIAN</a>
+                    <a class="dropdown-item" href="#">Jurisprudencia Corte Constitucional</a>
+                    <a class="dropdown-item" href="#">Jurisprudencia Consejo de Estado</a>
+                    <a class="dropdown-item" href="#">Convenios para activar la doble imposicion</a>
+                    <a class="dropdown-item" href="#">Textos oficiales de las normas</a>
+                    <a class="dropdown-item" href="#">Estatuto contable</a>
+
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Estatuto Tributario</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">2020</a>
+                    <a class="dropdown-item" href="#">2019</a>
+                    <a class="dropdown-item" href="#">2018</a>
+                    <a class="dropdown-item" href="#">2017</a>
+                    <a class="dropdown-item" href="#">2016</a>
+                    <a class="dropdown-item" href="#">Comprar</a>
+
+                </div>
+            </li>
+            <li class="nav-item dropdown ">
+                <a class="nav-link dropdown-toggle " data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false">Tax & Legal Times*</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Personas naturales, Tributacion internacional y Derecho laboral y migratorio</a>
+                    <a class="dropdown-item" href="#">Impuestos Territoriales, Litigios, Regimen SIMPLE</a>
+                    <a class="dropdown-item" href="#">Derecho Corporativo, Comercio exterior,Fusiones adquisiciones</a>
+                    <a class="dropdown-item" href="#">Impuesto sobre la renta e impuesto al patrimonio</a>
+                    <a class="dropdown-item" href="#">IVA,Impuesto nacioanal al consumo GMF y otros tributos</a>
+                    <a class="dropdown-item" href="#">Tax & Legal clip</a>
+                    <a class="dropdown-item" href="#">Boletin/Newsletter</a>
+
+                </div>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="#">Servicion Legales </a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="#">PwC Colombia </a>
+            </li>
+        </ul>
+        <ul class="navbar-nav mx-auto" *ngIf="user$ | async as user; else login">
+            <li class="nav-item " *ngIf="user">
+                <a class="nav-link" (click)="onLogout()" routerLink="/login">cerrar sesion </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link">{{user?.email}}</a>
+
+            </li>
+        </ul>
+
+    </div>
+</nav>

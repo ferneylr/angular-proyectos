@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "bdpwc-81b38": {
+      "hosting": {
+        "pwc": [
+          "bdpwc-81b38"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "bdpwc-81b38"
+  }
+}
