@@ -1,6 +1,16 @@
 # Pwc
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.5.
+Este proyecto se generó con la versión 10.0.5 de Angular CLI.10.0.5. , se integró con firebase, existen 5 componentes importantes y una clase para conexión 
+
+1) En la carpeta shared\navbar se encuentra el componente navbar en este está el maquetado y lógica de negocio para el menu y sub menus 
+2) En la carpeta auth se encuentra los componentes de login y register en estos se encuentra el maquetado y lógica de negocio para el registro e ingreso 
+3) En la carpeta form se encuentra el componente form en este esta un CRUD para ingresar actualizar y eliminar registros
+4) En la carpeta hom se encuentra el componente hom en este esta un banner con imágenes de PWC
+5) En la carpeta services esta la clase para conexión y funciones para acceder a firebase
+
+el funcionamiento de la web app es el siguiente existen menus y sub menus, en este esta la opción de iniciar sesión , en esta opción existe un formulario donde la persona puede ingresar, en caso de no estar registrado existe una opción en el formulario para registrarse, al estar registrado lo redireccionara a otro formulario donde podrá ingresar, editar y eliminar registros los cuales se encuentran en la BD de firebase
+
+Esta app ya se encuentra en un ambiente productivo alojado el firebase, podrá acceder a ella en la siguiente dirección  bdpwc-81b38.web.app
 
 ## Development server
 
